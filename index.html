@@ -63,13 +63,10 @@
         </h3>
 
         <div class="new-task">
-          <form ng-submit="main.push()" novalidate>
-            <a href="#" ng-click="main.push()">push</a> |
-            <a href="#" ng-click="main.pop()">pop</a>
+            <a href="#" ng-click="main.push()">push (enter)</a> |
+            <a href="#" ng-click="main.pop()">pop (escape)</a>
 
-            <input type="text" name="newTask" ng-model="main.newTask" placeholder="add task here" required>
-            <input type="submit" class="hidden"/>
-          </form>
+            <input type="text" name="newTask" ng-model="main.newTask" ng-keydown="main.keypress($event)" placeholder="add task here" autofocus>
         </div>
 
         <div class="tasks">

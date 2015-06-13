@@ -17,6 +17,7 @@
       vm.newTask = '';
       vm.push = push;
       vm.pop = pop;
+      vm.keypress = keypress;
     }
 
     function push() {
@@ -30,6 +31,14 @@
 
     function pop() {
       vm.stack.pop();
+    }
+
+    function keypress(event) {
+      if (event.keyCode === 13) {
+        vm.push();
+      } else if (event.keyCode === 27) {
+        vm.pop();
+      }
     }
   }
 })();
