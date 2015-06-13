@@ -196,7 +196,7 @@ header h2 {
 }
 
 section#downloads,
-div#no-downloads {
+section#no-downloads {
   position: relative;
   display: block;
   height: 197px;
@@ -207,7 +207,7 @@ div#no-downloads {
   background: transparent url(../images/bg-ramp.jpg) center 171px no-repeat;
 }
 
-div#no-downloads span.inner {
+section#no-downloads span.inner {
   display: block;
   position: relative;
   height: 197px;
