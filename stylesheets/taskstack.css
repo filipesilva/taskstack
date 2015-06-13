@@ -6,6 +6,9 @@
   text-align: center;
   border: 0px;
 }
+.hidden{
+  display: none;
+}
 .task {
   text-align: center;
   background-color: #cd596b;
