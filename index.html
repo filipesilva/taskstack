@@ -17,6 +17,8 @@
         $('#main_content').headsmart()
       })
     </script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    <script type="text/javascript" src="javascripts/app.js"></script>
     <title>Taskstack by filipesilva</title>
   </head>
 
@@ -43,11 +45,24 @@
       <span class="banner-fix"></span>
 
 
-      <section id="main_content">
+      <section id="main_content" ng-app="taskstack" ng-controller="Main as main">
         <h3>
-          <a id="why-taskstack" class="anchor" href="#why-taskstack" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why taskstack?</h3>
+          <a id="why-taskstack" class="anchor" href="#why-taskstack" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Why taskstack?
+        </h3>
 
-          <p>Because whenever I'm working on something non-trivial, it feel like I'm pushing and popping subtasks out of a FILO stack. I figured a visual way to track it would help me focus.</p>
+        <p>Because whenever I'm working on something non-trivial, it feel like I'm pushing and popping subtasks out of a FILO stack. I figured a visual way to track it would help me focus.</p>
+
+        <h3>
+          <a id="why-taskstack" class="anchor" href="#why-taskstack" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Let's get shit done.
+        </h3>
+
+        {{main.message}}
       </section>
 
       <footer>
