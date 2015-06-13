@@ -70,9 +70,14 @@
         </div>
 
         <div class="tasks">
-          <div class="task ribbon-inner" ng-repeat="task in main.stack">
+          <div class="task" ng-repeat="task in main.stack">
             <p>
               {{task.name}}
+            </p>
+          </div>
+          <div class="task default-task" ng-show="main.stack.length === 0">
+            <p>
+              Hooray, nothing to do!
             </p>
           </div>
         </div>

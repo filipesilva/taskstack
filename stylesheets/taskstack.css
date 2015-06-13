@@ -6,15 +6,15 @@
   text-align: center;
   border: 0px;
 }
-.hidden{
-  display: none;
-}
 .task {
   text-align: center;
   background-color: #79a8c9;
   border: 4px solid #577a92;
   padding: 2px;
   margin-top: 5px;
+}
+.default-task{
+  opacity: 0.5;
 }
 .task p {
   color: #ece4d8;
