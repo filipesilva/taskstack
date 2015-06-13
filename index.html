@@ -62,7 +62,12 @@
           Let's get shit done.
         </h3>
 
-        {{main.message}}
+        <p>
+          <a href="#" ng-click="main.push('task')">Push task</a>
+          <a href="#" ng-click="main.pop()">Pop</a>
+          {{ main.stack | json }}
+        </p>
+
       </section>
 
       <footer>

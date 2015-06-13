@@ -10,7 +10,20 @@
 
   function Main() {
     var vm = this;
-    vm.message = 'hello world';
-  }
+    activate();
 
+    function activate() {
+      vm.stack = [];
+      vm.push = push;
+      vm.pop = pop;
+    }
+
+    function push(task) {
+      vm.stack.push(task);
+    }
+
+    function pop() {
+      vm.stack.pop();
+    }
+  }
 })();
