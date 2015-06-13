@@ -14,12 +14,18 @@
 
     function activate() {
       vm.stack = [];
+      vm.newTask = '';
       vm.push = push;
       vm.pop = pop;
     }
 
-    function push(task) {
-      vm.stack.push(task);
+    function push() {
+      if (vm.newTask) {
+        vm.stack.push({
+          name: vm.newTask
+        });
+        vm.newTask = '';
+      }
     }
 
     function pop() {

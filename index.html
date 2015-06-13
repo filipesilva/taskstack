@@ -62,11 +62,20 @@
           Let's get shit done.
         </h3>
 
-        <p>
-          <a href="#" ng-click="main.push('task')">Push task</a>
-          <a href="#" ng-click="main.pop()">Pop</a>
-          {{ main.stack | json }}
-        </p>
+        <div class="new-task">
+          <a href="#" ng-click="main.push()">push</a> |
+          <a href="#" ng-click="main.pop()">pop</a>
+
+          <input type="text" name="newTask" value="" ng-model="main.newTask" placeholder="add task here">
+        </div>
+
+        <div class="tasks">
+          <div class="task ribbon-inner" ng-repeat="task in main.stack">
+            <p>
+              {{task.name}}
+            </p>
+          </div>
+        </div>
 
       </section>
 

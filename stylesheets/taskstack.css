@@ -1,0 +1,26 @@
+.new-task {
+  text-align: center;
+}
+.new-task input {
+  width: 100%;
+  text-align: center;
+  border: 0px;
+}
+.task {
+  text-align: center;
+  background-color: #cd596b;
+  border: 4px solid #7c334f;
+  padding: 2px;
+  margin-top: 5px;
+}
+.task p {
+  color: #ece4d8;
+  background-color: #7c334f;
+  padding: .7em 0;
+  margin: 0;
+}
+.tasks, .tasks > .task {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+}
