@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('taskstack', []);
+  angular.module('taskstack', ['ngAnimate']);
 
   angular.module('taskstack')
     .controller('Main', Main);

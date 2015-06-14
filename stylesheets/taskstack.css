@@ -29,7 +29,7 @@
   padding: 2px;
   margin-top: 5px;
 }
-.default-task{
+.default-task {
   opacity: 0.5;
 }
 .task p {
@@ -42,4 +42,33 @@
   transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
+}
+/*angular animations*/
+.fade.ng-enter {
+  transition: 0.2s ease all;
+  opacity: 0;
+}
+.fade.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.fade.ng-leave {
+  transition: 0.2s ease all;
+  opacity: 1;
+}
+.fade.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+.half-fade.ng-enter {
+  transition: 0.2s ease all;
+  opacity: 0;
+}
+.half-fade.ng-enter.ng-enter-active {
+  opacity: 0.5;
+}
+.half-fade.ng-leave {
+  transition: 0.2s ease all;
+  opacity: 0.5;
+}
+.half-fade.ng-leave.ng-leave-active {
+  opacity: 0;
 }

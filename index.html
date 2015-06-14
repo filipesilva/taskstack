@@ -19,6 +19,7 @@
       })
     </script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-animate.min.js"></script>
     <script type="text/javascript" src="javascripts/app.js"></script>
     <title>Taskstack by filipesilva</title>
   </head>
@@ -73,14 +74,14 @@
         </div>
 
         <div class="tasks">
-          <div class="task" ng-repeat="task in main.stack">
-            <p>
-              {{task.name}}
-            </p>
-          </div>
-          <div class="task default-task" ng-show="main.stack.length === 0">
+          <div class="task default-task half-fade" ng-if="main.stack.length === 0">
             <p>
               Hooray, nothing to do!
+            </p>
+          </div>
+          <div class="task fade" ng-repeat="task in main.stack">
+            <p>
+              {{task.name}}
             </p>
           </div>
         </div>
