@@ -1,7 +1,27 @@
 (function() {
   'use strict';
 
-  angular.module('taskstack', ['ngAnimate']);
+  angular.module('taskstack', ['ngRoute', 'ngAnimate']);
+
+  angular.module('taskstack')
+    .config(config);
+
+  config.$inject = ['$routeProvider'];
+
+  function config($routeProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: 'stack.html',
+        controller: 'Main',
+        controllerAs: 'main'
+      })
+      .when('/about', {
+        templateUrl: 'about.html',
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  }
 
   angular.module('taskstack')
     .controller('Main', Main);
@@ -18,8 +38,6 @@
       vm.push = push;
       vm.pop = pop;
       vm.keypress = keypress;
-      vm.about = false;
-      vm.toggleAbout = toggleAbout;
       load();
     }
 
@@ -44,11 +62,6 @@
       } else if (event.keyCode === 27) {
         vm.pop();
       }
-    }
-
-    function toggleAbout() {
-      vm.about = !vm.about;
-      save();
     }
 
     function save() {

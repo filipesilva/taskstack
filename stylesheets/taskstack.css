@@ -23,6 +23,7 @@
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+  color: inherit;
 }
 .new-task .action:hover {
   text-decoration: underline;

@@ -1,0 +1,40 @@
+<div class="shell">
+
+  <header>
+    <span class="ribbon-outer">
+      <span class="ribbon-inner new-task">
+        <h1>
+          <input type="text" name="newTask" ng-model="main.newTask" ng-keydown="main.keypress($event)" placeholder="add task here" autofocus>
+        </h1>
+        <h2>
+          <span class="action" ng-click="main.push()" title="enter">push</span> |
+          <span class="action" ng-click="main.pop()" title="escape">pop</span> |
+          <a class="action" href="#/about">about</a>
+        </h2>
+      </span>
+      <span class="left-tail"></span>
+      <span class="right-tail"></span>
+    </span>
+  </header>
+
+  <section id="no-downloads">
+    <span class="inner"></span>
+  </section>
+
+  <section id="main_content">
+    <div class="tasks">
+      <div class="task default-task" ng-if="main.stack.length === 0">
+        <p>
+          Hooray, all done!
+        </p>
+      </div>
+      <div class="task" ng-repeat="task in main.stack">
+        <p>
+          {{task.name}}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <span class="banner-fix"></span>
+</div>
