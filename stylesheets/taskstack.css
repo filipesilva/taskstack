@@ -1,6 +1,13 @@
 .new-task {
   text-align: center;
 }
+.new-task .action {
+  color: #417090;
+  cursor: pointer;
+}
+.new-task .action:hover {
+  text-decoration: underline;
+}
 .new-task .input-wrapper {
   border: 4px solid #79a8c9;
 }
