@@ -18,6 +18,8 @@
       vm.push = push;
       vm.pop = pop;
       vm.keypress = keypress;
+      vm.distractionFree = false;
+      vm.toggleDistractionFree = toggleDistractionFree;
       load();
     }
 
@@ -42,6 +44,10 @@
       } else if (event.keyCode === 27) {
         vm.pop();
       }
+    }
+
+    function toggleDistractionFree() {
+      vm.distractionFree = !vm.distractionFree;
     }
 
     function save() {

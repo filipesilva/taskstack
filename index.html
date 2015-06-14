@@ -24,9 +24,9 @@
     <title>Taskstack by filipesilva</title>
   </head>
 
-  <body>
-    <a id="forkme_banner" href="https://github.com/filipesilva/taskstack">View on GitHub</a>
-    <div class="shell">
+  <body ng-app="taskstack" ng-controller="Main as main">
+    <a id="forkme_banner" href="https://github.com/filipesilva/taskstack" ng-if="!main.distractionFree">View on GitHub</a>
+    <div class="shell" ng-if="!main.distractionFree">
 
       <header>
         <span class="ribbon-outer">
@@ -47,7 +47,7 @@
       <span class="banner-fix"></span>
 
 
-      <section id="main_content" ng-app="taskstack" ng-controller="Main as main">
+      <section id="main_content">
         <h3>
           <a id="why-taskstack" class="anchor" href="#why-taskstack" aria-hidden="true">
             <span class="octicon octicon-link"></span>
@@ -65,6 +65,7 @@
         </h3>
 
         <div class="new-task">
+            <span class="action" ng-click="main.toggleDistractionFree()">distraction free mode(alt+d)</span><br>
             <span class="action" ng-click="main.push()">push (enter)</span> |
             <span class="action" ng-click="main.pop()">pop (escape)</span>
 
@@ -102,6 +103,26 @@
 
     </div>
 
+    <div class="shell" ng-if="main.distractionFree">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Taskstack</h1>
+            <h2>A stack for tasks</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="no-downloads">
+        <span class="inner"></span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+    </div>
 
   </body>
 </html>
