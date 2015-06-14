@@ -93,14 +93,14 @@
   opacity: 0;
 }
 .default-task.ng-enter {
-  transition: 0.2s ease all;
+  transition: 0.2s 0.2s ease all;
   opacity: 0;
 }
 .default-task.ng-enter.ng-enter-active {
   opacity: 0.5;
 }
 .default-task.ng-leave {
-  transition: 0.2s ease all;
+  transition: 0.2s 0.2s ease all;
   opacity: 0.5;
 }
 .default-task.ng-leave.ng-leave-active {
