@@ -4,6 +4,9 @@
 .new-task .action {
   color: #417090;
   cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 .new-task .action:hover {
   text-decoration: underline;
