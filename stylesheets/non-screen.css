@@ -38,14 +38,14 @@ header h1 {
   font-size: 2em;
 }
 
-section#downloads {
+section#downloads, section#no-downloads {
   height: 171px;
   width: 602px;
   margin: 51px auto -250px;
   background: transparent url(../images/shield.png) center 0 no-repeat;
 }
 
-section#downloads a {
+section#downloads a, section#no-downloads span.inner {
   display: none;
 }
 
