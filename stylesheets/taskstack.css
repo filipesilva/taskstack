@@ -1,15 +1,17 @@
 .new-task {
   text-align: center;
 }
-.new-task .action {
-  color: #417090;
+.action {
   cursor: pointer;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
 }
-.new-task .action:hover {
+.action:hover {
   text-decoration: underline;
+}
+.new-task .action {
+  color: #417090;
 }
 .new-task .input-wrapper {
   border: 4px solid #79a8c9;

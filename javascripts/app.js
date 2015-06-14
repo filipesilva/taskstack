@@ -48,13 +48,19 @@
 
     function toggleDistractionFree() {
       vm.distractionFree = !vm.distractionFree;
+      save();
     }
 
     function save() {
+      $window.localStorage.setItem('distractionFree', angular.toJson(vm.distractionFree));
       $window.localStorage.setItem('stack', angular.toJson(vm.stack));
     }
 
     function load() {
+      if ($window.localStorage.getItem('distractionFree')) {
+        vm.distractionFree = angular.fromJson($window.localStorage.getItem(
+          'distractionFree'));
+      }
       if ($window.localStorage.getItem('stack')) {
         vm.stack = angular.fromJson($window.localStorage.getItem('stack'));
       }
