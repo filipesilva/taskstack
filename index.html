@@ -109,7 +109,9 @@
       <header>
         <span class="ribbon-outer">
           <span class="ribbon-inner">
-            <h1>add task</h1>
+            <h1>
+              <input type="text" name="newTask" ng-model="main.newTask" ng-keydown="main.keypress($event)" placeholder="add task here" autofocus>
+            </h1>
             <h2>
               <span class="action" ng-click="main.push()" title="enter">push</span> |
               <span class="action" ng-click="main.pop()" title="escape">pop</span> |

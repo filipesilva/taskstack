@@ -55,6 +55,23 @@
   padding: .2em 0;
   margin: 0;
 }
+.distraction-free input {
+  color: #ece4d8;
+  text-align: center;
+  width: 100%;
+  padding: 0px;
+  margin-top: -5px;
+  border: 0px;
+  font: inherit;
+  line-height: initial;
+  background-color: transparent;
+}
+.ribbon-inner h2 {
+  padding-bottom: 11px;
+}
+.distraction-free input:focus {
+    outline-width: 0;
+}
 .tasks, .tasks > .task {
   transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
