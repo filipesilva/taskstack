@@ -24,20 +24,35 @@
   font-size: 100%;
   font: inherit;
 }
-.task {
-  text-align: center;
+.default-task {
+  opacity: 0.5;
+}
+.full .task {
   background-color: #79a8c9;
   border: 4px solid #577a92;
   padding: 2px;
   margin-top: 5px;
 }
-.default-task {
-  opacity: 0.5;
-}
-.task p {
+.full .task p {
+  text-align: center;
   color: #ece4d8;
-  background-color: #577a92;
+  background-color: #5b7f98;
   padding: .7em 0;
+  margin: 0;
+}
+.distraction-free .tasks {
+
+}
+.distraction-free .task {
+
+}
+.distraction-free .task p {
+  color: #7c334f;
+  font-size: 3.5em;
+  font-style: italic;
+  line-height: 1.2;
+  text-align: center;
+  padding: .2em 0;
   margin: 0;
 }
 .tasks, .tasks > .task {

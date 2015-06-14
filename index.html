@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="stylesheets/core.css" media="screen">
     <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
     <link rel="stylesheet" href="stylesheets/github-light.css">
+    <link rel="stylesheet" href="stylesheets/taskstack.css">
 
     <script type="text/javascript" src="javascripts/modernizr.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -26,7 +27,7 @@
 
   <body ng-app="taskstack" ng-controller="Main as main">
     <a id="forkme_banner" href="https://github.com/filipesilva/taskstack" ng-if="!main.distractionFree">View on GitHub</a>
-    <div class="shell" ng-if="!main.distractionFree">
+    <div class="shell full" ng-if="!main.distractionFree">
 
       <header>
         <span class="ribbon-outer">
@@ -103,13 +104,17 @@
 
     </div>
 
-    <div class="shell" ng-if="main.distractionFree">
+    <div class="shell distraction-free" ng-if="main.distractionFree">
 
       <header>
         <span class="ribbon-outer">
           <span class="ribbon-inner">
-            <h1>New task</h1>
-            <h2><span class="action" ng-click="main.toggleDistractionFree()">full mode</span></h2>
+            <h1>add task</h1>
+            <h2>
+              <span class="action" ng-click="main.push()" title="enter">push</span> |
+              <span class="action" ng-click="main.pop()" title="escape">pop</span> |
+              <span class="action" ng-click="main.toggleDistractionFree()" title="alt+d">full mode</span>
+            </h2>
           </span>
           <span class="left-tail"></span>
           <span class="right-tail"></span>
@@ -120,6 +125,20 @@
         <span class="inner"></span>
       </section>
 
+      <section id="main_content">
+        <div class="tasks">
+          <div class="task default-task" ng-if="main.stack.length === 0">
+            <p>
+              Hooray, nothing to do!
+            </p>
+          </div>
+          <div class="task" ng-repeat="task in main.stack">
+            <p>
+              {{task.name}}
+            </p>
+          </div>
+        </div>
+      </section>
 
       <span class="banner-fix"></span>
     </div>
