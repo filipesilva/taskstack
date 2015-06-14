@@ -1,61 +1,4 @@
-.new-task {
-  text-align: center;
-}
-.action {
-  cursor: pointer;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-}
-.action:hover {
-  text-decoration: underline;
-}
-.new-task .action {
-  color: #417090;
-}
-.new-task .input-wrapper {
-  border: 4px solid #79a8c9;
-}
 .new-task input {
-  width: 100%;
-  text-align: center;
-  border: 0px;
-  padding: .7em 0;
-  font-size: 100%;
-  font: inherit;
-}
-.default-task {
-  opacity: 0.5;
-}
-.full .task {
-  background-color: #79a8c9;
-  border: 4px solid #577a92;
-  padding: 2px;
-  margin-top: 5px;
-}
-.full .task p {
-  text-align: center;
-  color: #ece4d8;
-  background-color: #5b7f98;
-  padding: .7em 0;
-  margin: 0;
-}
-.distraction-free .tasks {
-
-}
-.distraction-free .task {
-
-}
-.distraction-free .task p {
-  color: #7c334f;
-  font-size: 3.5em;
-  font-style: italic;
-  line-height: 1.2;
-  text-align: center;
-  padding: .2em 0;
-  margin: 0;
-}
-.distraction-free input {
   color: #ece4d8;
   text-align: center;
   width: 100%;
@@ -66,11 +9,36 @@
   line-height: initial;
   background-color: transparent;
 }
-.ribbon-inner h2 {
-  padding-bottom: 11px;
-}
-.distraction-free input:focus {
+.new-task input:focus {
     outline-width: 0;
+}
+.new-task h1 {
+  padding-top: 12px;
+}
+.new-task h2 {
+  padding-bottom: 13px;
+}
+.new-task .action {
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.new-task .action:hover {
+  text-decoration: underline;
+}
+.default-task {
+  opacity: 0.5;
+}
+.task p {
+  color: #7c334f;
+  font-size: 3.5em;
+  font-style: italic;
+  line-height: 1.2;
+  text-align: center;
+  padding: .2em 0;
+  margin: 0;
+  border-bottom: .2em double #d3ccc1;
 }
 .tasks, .tasks > .task {
   transform: rotate(180deg);

@@ -26,8 +26,8 @@
   </head>
 
   <body ng-app="taskstack" ng-controller="Main as main">
-    <a id="forkme_banner" href="https://github.com/filipesilva/taskstack" ng-if="!main.distractionFree">View on GitHub</a>
-    <div class="shell full" ng-if="!main.distractionFree">
+    <a id="forkme_banner" href="https://github.com/filipesilva/taskstack" ng-if="main.about">View on GitHub</a>
+    <div class="shell full" ng-if="main.about">
 
       <header>
         <span class="ribbon-outer">
@@ -65,28 +65,7 @@
           Let's get shit done.
         </h3>
 
-        <div class="new-task">
-            <span class="action" ng-click="main.toggleDistractionFree()">distraction free mode(alt+d)</span><br>
-            <span class="action" ng-click="main.push()">push (enter)</span> |
-            <span class="action" ng-click="main.pop()">pop (escape)</span>
-
-            <div class="input-wrapper">
-              <input type="text" name="newTask" ng-model="main.newTask" ng-keydown="main.keypress($event)" placeholder="add task here" autofocus>
-            </div>
-        </div>
-
-        <div class="tasks">
-          <div class="task default-task" ng-if="main.stack.length === 0">
-            <p>
-              Hooray, nothing to do!
-            </p>
-          </div>
-          <div class="task" ng-repeat="task in main.stack">
-            <p>
-              {{task.name}}
-            </p>
-          </div>
-        </div>
+        <p>Click <a href="" ng-click="main.toggleAbout()">here</a> to go back to the task stack.</p>
 
       </section>
 
@@ -104,18 +83,18 @@
 
     </div>
 
-    <div class="shell distraction-free" ng-if="main.distractionFree">
+    <div class="shell" ng-if="!main.about">
 
       <header>
         <span class="ribbon-outer">
-          <span class="ribbon-inner">
+          <span class="ribbon-inner new-task">
             <h1>
               <input type="text" name="newTask" ng-model="main.newTask" ng-keydown="main.keypress($event)" placeholder="add task here" autofocus>
             </h1>
             <h2>
               <span class="action" ng-click="main.push()" title="enter">push</span> |
               <span class="action" ng-click="main.pop()" title="escape">pop</span> |
-              <span class="action" ng-click="main.toggleDistractionFree()" title="alt+d">full mode</span>
+              <span class="action" ng-click="main.toggleAbout()">about</span>
             </h2>
           </span>
           <span class="left-tail"></span>
