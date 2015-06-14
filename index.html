@@ -74,12 +74,12 @@
         </div>
 
         <div class="tasks">
-          <div class="task default-task half-fade" ng-if="main.stack.length === 0">
+          <div class="task default-task" ng-if="main.stack.length === 0">
             <p>
               Hooray, nothing to do!
             </p>
           </div>
-          <div class="task fade" ng-repeat="task in main.stack">
+          <div class="task" ng-repeat="task in main.stack">
             <p>
               {{task.name}}
             </p>

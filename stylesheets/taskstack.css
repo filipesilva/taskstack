@@ -44,31 +44,31 @@
   -moz-transform: rotate(180deg);
 }
 /*angular animations*/
-.fade.ng-enter {
+.task.ng-enter {
   transition: 0.2s ease all;
   opacity: 0;
 }
-.fade.ng-enter.ng-enter-active {
+.task.ng-enter.ng-enter-active {
   opacity: 1;
 }
-.fade.ng-leave {
+.task.ng-leave {
   transition: 0.2s ease all;
   opacity: 1;
 }
-.fade.ng-leave.ng-leave-active {
+.task.ng-leave.ng-leave-active {
   opacity: 0;
 }
-.half-fade.ng-enter {
+.default-task.ng-enter {
   transition: 0.2s ease all;
   opacity: 0;
 }
-.half-fade.ng-enter.ng-enter-active {
+.default-task.ng-enter.ng-enter-active {
   opacity: 0.5;
 }
-.half-fade.ng-leave {
+.default-task.ng-leave {
   transition: 0.2s ease all;
   opacity: 0.5;
 }
-.half-fade.ng-leave.ng-leave-active {
+.default-task.ng-leave.ng-leave-active {
   opacity: 0;
 }
