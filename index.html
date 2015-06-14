@@ -67,7 +67,9 @@
             <a href="#" ng-click="main.push()">push (enter)</a> |
             <a href="#" ng-click="main.pop()">pop (escape)</a>
 
-            <input type="text" name="newTask" ng-model="main.newTask" ng-keydown="main.keypress($event)" placeholder="add task here" autofocus>
+            <div class="input-wrapper">
+              <input type="text" name="newTask" ng-model="main.newTask" ng-keydown="main.keypress($event)" placeholder="add task here" autofocus>
+            </div>
         </div>
 
         <div class="tasks">
