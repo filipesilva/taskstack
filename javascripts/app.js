@@ -6,9 +6,9 @@
   angular.module('taskstack')
     .controller('Main', Main);
 
-  Main.$inject = [];
+  Main.$inject = ['$window'];
 
-  function Main() {
+  function Main($window) {
     var vm = this;
     activate();
 
@@ -18,6 +18,7 @@
       vm.push = push;
       vm.pop = pop;
       vm.keypress = keypress;
+      load();
     }
 
     function push() {
@@ -26,11 +27,13 @@
           name: vm.newTask
         });
         vm.newTask = '';
+        save();
       }
     }
 
     function pop() {
       vm.stack.pop();
+      save();
     }
 
     function keypress(event) {
@@ -38,6 +41,16 @@
         vm.push();
       } else if (event.keyCode === 27) {
         vm.pop();
+      }
+    }
+
+    function save() {
+      $window.localStorage.setItem('stack', angular.toJson(vm.stack));
+    }
+
+    function load() {
+      if ($window.localStorage.getItem('stack')) {
+        vm.stack = angular.fromJson($window.localStorage.getItem('stack'));
       }
     }
   }
