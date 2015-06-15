@@ -1,22 +1,23 @@
+.new-task {
+  padding-top: 3px;
+  margin-bottom: 45px;
+  text-align: center;
+  width: 100%;
+  color: #7eb0d2;
+  margin-top: -95px;
+}
 .new-task input {
-  color: #ece4d8;
+  color: #7c334f;
   text-align: center;
   width: 100%;
   padding: 0px;
-  margin-top: -5px;
   border: 0px;
+  border-bottom: .2em double #d3ccc1;
   font: inherit;
-  line-height: initial;
   background-color: transparent;
 }
 .new-task input:focus {
     outline-width: 0;
-}
-.new-task h1 {
-  padding-top: 12px;
-}
-.new-task h2 {
-  padding-bottom: 13px;
 }
 .new-task .action {
   cursor: pointer;
