@@ -1,77 +1,75 @@
 (function() {
-  'use strict';
+  var Main, config;
 
   angular.module('taskstack', ['ngRoute', 'ngAnimate']);
 
-  angular.module('taskstack')
-    .config(config);
+  config = function($routeProvider) {
+    return $routeProvider.when('/', {
+      templateUrl: 'stack.html',
+      controller: 'Main',
+      controllerAs: 'main'
+    }).when('/about', {
+      templateUrl: 'about.html'
+    }).otherwise({
+      redirectTo: '/'
+    });
+  };
 
   config.$inject = ['$routeProvider'];
 
-  function config($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'stack.html',
-        controller: 'Main',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'about.html',
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  }
+  angular.module('taskstack').config(config);
 
-  angular.module('taskstack')
-    .controller('Main', Main);
+  Main = (function() {
+    var newTask, stack;
 
-  Main.$inject = ['$window'];
+    Main.$inject = ['$window'];
 
-  function Main($window) {
-    var vm = this;
-    activate();
+    stack = [];
 
-    function activate() {
-      vm.stack = [];
-      vm.newTask = '';
-      vm.push = push;
-      vm.pop = pop;
-      vm.keypress = keypress;
-      load();
+    newTask = '';
+
+    function Main($window) {
+      this.$window = $window;
+      this.load();
     }
 
-    function push() {
-      if (vm.newTask) {
-        vm.stack.push({
-          name: vm.newTask
+    Main.prototype.push = function() {
+      if (this.newTask) {
+        this.stack.push({
+          name: this.newTask
         });
-        vm.newTask = '';
-        save();
+        this.newTask = '';
+        return this.save();
       }
-    }
+    };
 
-    function pop() {
-      vm.stack.pop();
-      save();
-    }
+    Main.prototype.pop = function() {
+      this.stack.pop();
+      return this.save();
+    };
 
-    function keypress(event) {
+    Main.prototype.keypress = function(event) {
       if (event.keyCode === 13) {
-        vm.push();
+        return this.push();
       } else if (event.keyCode === 27) {
-        vm.pop();
+        return this.pop();
       }
-    }
+    };
 
-    function save() {
-      $window.localStorage.setItem('stack', angular.toJson(vm.stack));
-    }
-
-    function load() {
-      if ($window.localStorage.getItem('stack')) {
-        vm.stack = angular.fromJson($window.localStorage.getItem('stack'));
+    Main.prototype.load = function() {
+      if (this.$window.localStorage.getItem('stack')) {
+        return this.stack = angular.fromJson(this.$window.localStorage.getItem('stack'));
       }
-    }
-  }
-})();
+    };
+
+    Main.prototype.save = function() {
+      return this.$window.localStorage.setItem('stack', angular.toJson(this.stack));
+    };
+
+    return Main;
+
+  })();
+
+  angular.module('taskstack').controller('Main', Main);
+
+}).call(this);
