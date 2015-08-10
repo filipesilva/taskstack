@@ -20,10 +20,10 @@ angular.module('taskstack').config(config)
 
 class Main
   @$inject = ['$window']
-  stack = []
-  newTask = ''
 
   constructor: (@$window) ->
+    @stack = []
+    @newTask = ''
     @load()
 
   push: ->
